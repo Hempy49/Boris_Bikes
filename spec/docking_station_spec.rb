@@ -2,7 +2,18 @@ require "docking_station.rb"
 require "bike.rb"
 
 describe DockingStation do
-  let(:docking_station) { DockingStation.new}
+
+  let(:docking_station) {DockingStation.new}
+
+  it "allows users to set capacity" do
+    num = 5
+    station = DockingStation.new(num)
+    expect(station.capacity).to eq num
+  end
+
+  it "starts with 20 as a default capacity" do
+    expect(docking_station.capacity).to eq 20
+  end
 
   it "gets a bike and expects it to be working" do
     bike = Bike.new
@@ -13,7 +24,7 @@ describe DockingStation do
 
 describe "#dock" do
   it "won't dock a bike if full" do
-    DockingStation::DEFAULT_CAPACITY.times { docking_station.dock Bike.new }
+    docking_station.capacity.times { docking_station.dock Bike.new }
     expect{docking_station.dock(Bike.new)}.to raise_error("Docking station is full")
   end
 end
