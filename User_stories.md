@@ -16,6 +16,20 @@
 #So that I am not confused and charged unnecessarily,
 #I'd like docking stations not to release bikes when there are none available.
 
+#n
+#As a member of the public,
+#So that I reduce the chance of getting a broken bike in future,
+#I'd like to report a bike as broken when I return it.
+
+#As a maintainer of the system,
+#So that I can manage broken bikes and not disappoint users,
+#I'd like docking stations not to release broken bikes.
+
+#As a maintainer of the system,
+#So that I can manage broken bikes and not disappoint users,
+#I'd like docking stations to accept returning bikes (broken or not)
+
+
 | Objects | Messages |
 | --------|----------|
 | Person  ||
@@ -23,12 +37,57 @@
 | Docking station| release_bike |
 | Person||
 | Bike | dock |
-| Docking station | return_bike |
+| docking station | return_bike |
 | Person | |
 | docking station | see |
 | bike | docked |
 |Person ||
 | docking stations | error when release_bike |
+| Person||
+| Bike | report|
+| maintainer ||
+| docking stations | not release broken bike |
+| docking stations | return_bike |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
