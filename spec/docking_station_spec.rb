@@ -50,8 +50,11 @@ end
       expect{docking_station.release_bike}.to raise_error("No bikes available")
     end
 
-    it "won't release a bike that's not working" do
-      expect(docking_station.release_bike).not_to be_broken
+    it "will not release a broken bike" do
+      bike = Bike.new
+      bike.report_broken
+      docking_station.dock(bike)
+      expect(docking_station.release_bike).to eq nil 
     end
 
 

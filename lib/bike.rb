@@ -1,14 +1,19 @@
 class Bike
+
+  def initialize
+    @condition = :working
+  end
+
   def working?
-    true
+    @condition == :working
   end
 
 def report_broken
-  @broken = true
+  @condition = :broken 
 end
 
 def broken?
-  @broken
+  @condition == :broken
 end
 
 end
